@@ -1,0 +1,5 @@
+opencv-python
+numpy
+minisom
+
+# pip install -r requirements.txt
