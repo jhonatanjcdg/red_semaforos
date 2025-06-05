@@ -6,7 +6,7 @@ from tensorflow.keras import layers, models
 train_datagen = ImageDataGenerator(rescale=1./255, validation_split=0.2)
 
 train_generator = train_datagen.flow_from_directory(
-    'dataset',
+    'patrones',
     target_size=(64, 64),
     batch_size=32,
     class_mode='categorical',
@@ -14,7 +14,7 @@ train_generator = train_datagen.flow_from_directory(
 )
 
 val_generator = train_datagen.flow_from_directory(
-    'dataset',
+    'patrones',
     target_size=(64, 64),
     batch_size=32,
     class_mode='categorical',

@@ -52,5 +52,5 @@ os.makedirs('model', exist_ok=True)
 with open("model/som_trained.pkl", "wb") as f:
     pickle.dump((som, label_map), f)
 
-print("✅ Modelo SOM entrenado y guardado en 'model/som_trained.pkl'.")
+print("Modelo SOM entrenado y guardado en 'model/som_trained.pkl'.")
 print(f"Neuronas con etiquetas asignadas: {len(label_map)} de {som_width*som_height}")

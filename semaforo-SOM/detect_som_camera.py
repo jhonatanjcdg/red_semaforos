@@ -11,14 +11,14 @@ with open("model/som_trained.pkl", "rb") as f:
 def map_to_state(label):
     """
     Traduce la etiqueta de color a su estado:
-      - 'red'    → '🚨 PELIGRO'
-      - 'yellow' → '⚠️ ADVERTENCIA'
-      - 'green'  → '✅ SEGURO'
+      - 'red'    → 'PELIGRO'
+      - 'yellow' → 'ADVERTENCIA'
+      - 'green'  → 'SEGURO'
     """
     return {
-        'red': '🚨 PELIGRO',
-        'yellow': '⚠️ ADVERTENCIA',
-        'green': '✅ SEGURO'
+        'red': 'PELIGRO',
+        'yellow': 'ADVERTENCIA',
+        'green': 'SEGURO'
     }.get(label, 'Desconocido')
 
 # 2) Inicializar captura de cámara
@@ -55,8 +55,7 @@ while True:
     cv2.putText(frame, estado, (10, 30),
                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2)
 
-    # Opcional: mostrar neurona ganadora en consola para diagnóstico
-    # print(f"Winner neuron: {winner}, Label predicho: {label}")
+    print(f"Winner neuron: {winner}, Label predicho: {label}")
 
     cv2.imshow("Detección SOM Semáforo", frame)
 

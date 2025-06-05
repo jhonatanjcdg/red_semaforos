@@ -72,7 +72,6 @@ class MLP:
         return self.forward(X)
 
 class TrafficLightDetector:
-    """Detector de semáforos usando MLP con detección de círculos"""
     
     def __init__(self):
         self.mlp = MLP(input_dim=3, hidden_dim=HIDDEN_UNITS, output_dim=3)
@@ -137,7 +136,6 @@ class TrafficLightDetector:
         print(f"Precisión del entrenamiento: {accuracy:.2%}")
     
     def detect_circles(self, image):
-        """Detectar círculos en la imagen usando HoughCircles"""
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         
         # Aplicar blur para mejorar detección
